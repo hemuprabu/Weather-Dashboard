@@ -37,7 +37,7 @@ The following animation demonstrates the application functionality:
 
 ## Screenshot
 
-![Screenshot 2024-03-28 163843](https://github.com/hemuprabu/Weather-Dashboard/assets/108079829/14c30b1a-9a39-41aa-b33e-4239f503bee0)
+![06-server-side-apis-homework-demo](https://github.com/hemuprabu/Weather-Dashboard/assets/108079829/6e47f76e-e856-410a-8cf5-7e66ae481e2f)
 
 ## Contact
 
