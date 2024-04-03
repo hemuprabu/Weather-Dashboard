@@ -9,3 +9,16 @@
 .todayTemp, .todayWind, .todayHumidity {
     display: inline-flex;
 }
+.forecast5dayscss{
+    margin-bottom: 5px;
+}
+.forecast5dayscss div{
+    background-color: black;
+    color: #fff;
+    
+}
+.todayWindVal {
+    float: left;
+    display: flex;
+    
+}
