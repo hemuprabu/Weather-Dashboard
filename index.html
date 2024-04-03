@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body class="container text-center w-">
+    <header class="col-lg-10 justify-content-center bg-primary my-2">
+        <p class="py-2"> Weather Dashboard </p>
+    </header>
+    <main class="container d-flex">
+        <aside class="col-lg-3">
+            <div class="">
+                <form id="search-form" class="form">
+                    <label for="search-input" class="form-label">Search for a City:</label>
+                    <input type="text" class="form-input py-2" id="search-input" placeholder="Select a city">
+                    <br />
+                    <button id = "searchCitybtn" class="btn btn-primary btn-block w-75 my-2">Search</button>
+                </form>
+            </div>
+            <hr/>
+            <div id="SearchCityDataList">
+              
+            </div>
+        </aside>
+        <div class="col-lg-8" id="fiveDayForecastWrap">
+            <section class="row col-12 m-0 p-0">
+                <div class="col-12 col-md-9">
+
+                    <section class="row justify-content-around">
+
+                        <div class="col-12 col-sm-12 col-lg-12">
+                            <div class="card" >
+                                <div class="forecast card-header justify-content-start w-100">
+                                    <h2 class="cityName" id="currentCityName"> </h2>
+                                    <h2 class="currentdate" id="currentData"></h2>
+                                    <img id="currentWeatherImg"/>
+                                </div>
+                                <div class="card-body" >
+                                    <div class="todayTemp w-100" >
+                                        <p>Temp:</p>
+                                        <p class="todayTempVal" id="currentTempVal"></p>
+                                    </div>
+                                    <div class="todayWind w-100">
+                                        <p>Wind:</p>
+                                        <p class="todayWindVal w-100" id="currentWindVal"></p>
+                                    </div>
+                                    <div class="todayHumidity w-100">
+                                        <p>Humidty:</p>
+                                        <p class="todayHumidVal" id="currentHumidVal"></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-12 col-md-9">
+                    <h2>5-Day Forecast:</h2>
+
+                    <section class="row justify-content-around" >
+                        <div class="col-12 col-sm-6 col-lg-2">
+                            <div class="card" id="ForecastWrapCardDay_1">
+                                <div class="forecast card-header">
+                                    <h2 class="forecastdate "  id="forecastdateDay_1"></h2>
+                                    <img id="weathericonDay_1"/>
+                                </div>
+                                <div class="card-body" id="fiveDayForecastWrapCardbdy">
+                                    <div class="forecastTemp">
+                                        <p>Temp:</p>
+                                        <p class="forecastTempVal" id="forecastTempValDay_1"></p>
+                                    </div>
+                                    <div class="forecastWind">
+                                        <p>Wind:</p>
+                                        <p class="forecastWindVal" id="forecastWindValDay_1"></p>
+                                    </div>
+                                    <div class="forecastHumidity" >
+                                        <p>Humidty:</p>
+                                        <p class="forecastHumidVal" id="forecastHumidValDay_1"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-2">
+                            <div class="card" id="ForecastWrapCardDay_2">
+                                <div class="forecast card-header">
+                                    <h2 class="forecastdate "  id="forecastdateDay_2"></h2>
+                                    <img id="weathericonDay_2"/>
+                                </div>
+                                <div class="card-body" id="fiveDayForecastWrapCardbdy">
+                                    <div class="forecastTemp">
+                                        <p>Temp:</p>
+                                        <p class="forecastTempVal" id="forecastTempValDay_2"></p>
+                                    </div>
+                                    <div class="forecastWind">
+                                        <p>Wind:</p>
+                                        <p class="forecastWindVal" id="forecastWindValDay_2"></p>
+                                    </div>
+                                    <div class="forecastHumidity" >
+                                        <p>Humidty:</p>
+                                        <p class="forecastHumidVal" id="forecastHumidValDay_2"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-2">
+                            <div class="card" id="ForecastWrapCardDay_3">
+                                <div class="forecast card-header">
+                                    <h2 class="forecastdate "  id="forecastdateDay_3"></h2>
+                                    <img id="weathericonDay_3"/>
+                                </div>
+                                <div class="card-body" id="fiveDayForecastWrapCardbdy">
+                                    <div class="forecastTemp">
+                                        <p>Temp:</p>
+                                        <p class="forecastTempVal" id="forecastTempValDay_3"></p>
+                                    </div>
+                                    <div class="forecastWind">
+                                        <p>Wind:</p>
+                                        <p class="forecastWindVal" id="forecastWindValDay_3"></p>
+                                    </div>
+                                    <div class="forecastHumidity" >
+                                        <p>Humidty:</p>
+                                        <p class="forecastHumidVal" id="forecastHumidValDay_3"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-2">
+                            <div class="card" id="ForecastWrapCardDay_4">
+                                <div class="forecast card-header">
+                                    <h2 class="forecastdate "  id="forecastdateDay_4"></h2>
+                                    <img id="weathericonDay_4"/>
+                                </div>
+                                <div class="card-body" id="fiveDayForecastWrapCardbdy">
+                                    <div class="forecastTemp">
+                                        <p>Temp:</p>
+                                        <p class="forecastTempVal" id="forecastTempValDay_4"></p>
+                                    </div>
+                                    <div class="forecastWind">
+                                        <p>Wind:</p>
+                                        <p class="forecastWindVal" id="forecastWindValDay_4"></p>
+                                    </div>
+                                    <div class="forecastHumidity" >
+                                        <p>Humidty:</p>
+                                        <p class="forecastHumidVal" id="forecastHumidValDay_4"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-2">
+                            <div class="card" id="ForecastWrapCardDay_5">
+                                <div class="forecast card-header">
+                                    <h2 class="forecastdate "  id="forecastdateDay_5"></h2>
+                                    <img id="weathericonDay_5"/>
+                                </div>
+                                <div class="card-body" id="fiveDayForecastWrapCardbdy">
+                                    <div class="forecastTemp">
+                                        <p>Temp:</p>
+                                        <p class="forecastTempVal" id="forecastTempValDay_5"></p>
+                                    </div>
+                                    <div class="forecastWind">
+                                        <p>Wind:</p>
+                                        <p class="forecastWindVal" id="forecastWindValDay_5"></p>
+                                    </div>
+                                    <div class="forecastHumidity" >
+                                        <p>Humidty:</p>
+                                        <p class="forecastHumidVal" id="forecastHumidValDay_5"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <!-- <article class=" row col-lg-12 ">
+                <h2> 5-Day Forecast:</h2>
+                <div class="forecastData d-flex justify-content-between w-100">
+                    <section class="col mr-2" style="background-color: black;">
+
+
+
+
+
+                        <div class="forecastWeatherData">
+                            <div class="forecast">
+                                <h2 class="forecastdate">(9/13/2022)</h2>
+                                <span class="weathericon">🔆</span>
+                            </div>
+                            <div class="forecastTemp">
+                                <p>Temp:</p>
+                                <p class="forecastTempVal"></p>
+                            </div>
+                            <div class="forecastWind">
+                                <p>Wind:</p>
+                                <p class="forecastWindVal"></p>
+                            </div>
+                            <div class="forecastHumidity">
+                                <p>Temp:</p>
+                                <p class="forecastHumidVal"></p>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section class="col" style="background-color: black;">
+                        <div class="forecastWeatherData">
+                            <div class="forecast">
+                                <h2 class="forecastdate">(9/13/2022)</h2>
+                                <span class="weathericon">🔆</span>
+                            </div>
+                            <div class="forecastTemp">
+                                <p>Temp:</p>
+                                <p class="forecastTempVal"></p>
+                            </div>
+                            <div class="forecastWind">
+                                <p>Wind:</p>
+                                <p class="forecastWindVal"></p>
+                            </div>
+                            <div class="forecastHumidity">
+                                <p>Temp:</p>
+                                <p class="forecastHumidVal"></p>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section class="col" style="background-color: black;">
+                        <div class="forecastWeatherData">
+                            <div class="forecast">
+                                <h2 class="forecastdate">(9/13/2022)</h2>
+                                <span class="weathericon">🔆</span>
+                            </div>
+                            <div class="forecastTemp">
+                                <p>Temp:</p>
+                                <p class="forecastTempVal"></p>
+                            </div>
+                            <div class="forecastWind">
+                                <p>Wind:</p>
+                                <p class="forecastWindVal"></p>
+                            </div>
+                            <div class="forecastHumidity">
+                                <p>Temp:</p>
+                                <p class="forecastHumidVal"></p>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section class="col" style="background-color: black;">
+                        <div class="forecastWeatherData">
+                            <div class="forecast">
+                                <h2 class="forecastdate">(9/13/2022)</h2>
+                                <span class="weathericon">🔆</span>
+                            </div>
+                            <div class="forecastTemp">
+                                <p>Temp:</p>
+                                <p class="forecastTempVal"></p>
+                            </div>
+                            <div class="forecastWind">
+                                <p>Wind:</p>
+                                <p class="forecastWindVal"></p>
+                            </div>
+                            <div class="forecastHumidity">
+                                <p>Temp:</p>
+                                <p class="forecastHumidVal"></p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="col" style="background-color: black;">
+                        <div class="forecastWeatherData">
+                            <div class="forecast">
+                                <h2 class="forecastdate">(9/13/2022)</h2>
+                                <span class="weathericon">🔆</span>
+                            </div>
+                            <div class="forecastTemp">
+                                <p>Temp:</p>
+                                <p class="forecastTempVal"></p>
+                            </div>
+                            <div class="forecastWind">
+                                <p>Wind:</p>
+                                <p class="forecastWindVal"></p>
+                            </div>
+                            <div class="forecastHumidity">
+                                <p>Temp:</p>
+                                <p class="forecastHumidVal"></p>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </article> -->
+        </div>
+    </main>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

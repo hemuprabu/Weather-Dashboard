@@ -1,0 +1,11 @@
+.form-label{
+    font-weight: bold;
+}
+
+.todayWeather{
+    border: 2px solid rgb(172, 171, 171);
+    border-radius: 5px;
+}
+.todayTemp, .todayWind, .todayHumidity {
+    display: inline-flex;
+}
