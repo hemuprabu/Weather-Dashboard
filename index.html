@@ -12,10 +12,11 @@
 </head>
 
 <body class="container text-center w-">
-    <header class="col-lg-10 justify-content-center bg-primary my-2">
+    <header class="col-lg-12 justify-content-center bg-primary my-2">
         <p class="py-2"> Weather Dashboard </p>
     </header>
     <main class="container d-flex">
+        <!-- search by city -->
         <aside class="col-lg-3">
             <div class="">
                 <form id="search-form" class="form">
@@ -30,11 +31,12 @@
               
             </div>
         </aside>
-        <div class="col-lg-8" id="fiveDayForecastWrap">
-            <section class="row col-12 m-0 p-0">
-                <div class="col-12 col-md-9">
+        <div class="col-lg-9" id="fiveDayForecastWrap">
+            <!-- current city and today's weather data -->
+            <section class="container col-12 m-0 p-0">
+                <div class="col-12 col-md-12">
 
-                    <section class="row justify-content-around">
+                    <section class="row">
 
                         <div class="col-12 col-sm-12 col-lg-12">
                             <div class="card" >
@@ -63,14 +65,15 @@
                     </section>
                 </div>
             </section>
-            <section class="row">
-                <div class="col-12 col-md-9">
+            <!-- 5 days weather data -->
+            <section class="container">
+                <div class="container col-12 col-md-12">
                     <h2>5-Day Forecast:</h2>
 
-                    <section class="row justify-content-around" >
-                        <div class="col-12 col-sm-6 col-lg-2 forecast5dayscss">
+                    <article class="forecastcss" >
+                        <div class="col-12 col-sm-6 col-md-2 forecast5dayscss">
                             <div class="card" id="ForecastWrapCardDay_1">
-                                <div class="forecast card-header">
+                                <div class="forecastDay card-header">
                                     <h2 class="forecastdate "  id="forecastdateDay_1"></h2>
                                     <img id="weathericonDay_1"/>
                                 </div>
@@ -90,9 +93,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-2 forecast5dayscss">
+                        <div class="col-12 col-sm-6 col-md-2 forecast5dayscss">
                             <div class="card" id="ForecastWrapCardDay_2">
-                                <div class="forecast card-header">
+                                <div class="forecastDay card-header">
                                     <h2 class="forecastdate "  id="forecastdateDay_2"></h2>
                                     <img id="weathericonDay_2"/>
                                 </div>
@@ -112,9 +115,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-2 forecast5dayscss">
+                        <div class="col-12 col-sm-6 col-md-2 forecast5dayscss">
                             <div class="card" id="ForecastWrapCardDay_3">
-                                <div class="forecast card-header">
+                                <div class="forecastDay card-header">
                                     <h2 class="forecastdate "  id="forecastdateDay_3"></h2>
                                     <img id="weathericonDay_3"/>
                                 </div>
@@ -134,9 +137,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-2 forecast5dayscss">
+                        <div class="col-12 col-sm-6 col-md-2 forecast5dayscss">
                             <div class="card" id="ForecastWrapCardDay_4">
-                                <div class="forecast card-header">
+                                <div class="forecastDay card-header">
                                     <h2 class="forecastdate "  id="forecastdateDay_4"></h2>
                                     <img id="weathericonDay_4"/>
                                 </div>
@@ -156,9 +159,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-2 forecast5dayscss">
+                        <div class="col-12 col-sm-6 col-md-2 forecast5dayscss">
                             <div class="card" id="ForecastWrapCardDay_5">
-                                <div class="forecast card-header">
+                                <div class="forecastDay card-header">
                                     <h2 class="forecastdate "  id="forecastdateDay_5"></h2>
                                     <img id="weathericonDay_5"/>
                                 </div>
@@ -178,123 +181,9 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </article>
                 </div>
             </section>
-            <!-- <article class=" row col-lg-12 ">
-                <h2> 5-Day Forecast:</h2>
-                <div class="forecastData d-flex justify-content-between w-100">
-                    <section class="col mr-2" style="background-color: black;">
-
-
-
-
-
-                        <div class="forecastWeatherData">
-                            <div class="forecast">
-                                <h2 class="forecastdate">(9/13/2022)</h2>
-                                <span class="weathericon">🔆</span>
-                            </div>
-                            <div class="forecastTemp">
-                                <p>Temp:</p>
-                                <p class="forecastTempVal"></p>
-                            </div>
-                            <div class="forecastWind">
-                                <p>Wind:</p>
-                                <p class="forecastWindVal"></p>
-                            </div>
-                            <div class="forecastHumidity">
-                                <p>Temp:</p>
-                                <p class="forecastHumidVal"></p>
-                            </div>
-                        </div>
-
-                    </section>
-                    <section class="col" style="background-color: black;">
-                        <div class="forecastWeatherData">
-                            <div class="forecast">
-                                <h2 class="forecastdate">(9/13/2022)</h2>
-                                <span class="weathericon">🔆</span>
-                            </div>
-                            <div class="forecastTemp">
-                                <p>Temp:</p>
-                                <p class="forecastTempVal"></p>
-                            </div>
-                            <div class="forecastWind">
-                                <p>Wind:</p>
-                                <p class="forecastWindVal"></p>
-                            </div>
-                            <div class="forecastHumidity">
-                                <p>Temp:</p>
-                                <p class="forecastHumidVal"></p>
-                            </div>
-                        </div>
-
-                    </section>
-                    <section class="col" style="background-color: black;">
-                        <div class="forecastWeatherData">
-                            <div class="forecast">
-                                <h2 class="forecastdate">(9/13/2022)</h2>
-                                <span class="weathericon">🔆</span>
-                            </div>
-                            <div class="forecastTemp">
-                                <p>Temp:</p>
-                                <p class="forecastTempVal"></p>
-                            </div>
-                            <div class="forecastWind">
-                                <p>Wind:</p>
-                                <p class="forecastWindVal"></p>
-                            </div>
-                            <div class="forecastHumidity">
-                                <p>Temp:</p>
-                                <p class="forecastHumidVal"></p>
-                            </div>
-                        </div>
-
-                    </section>
-                    <section class="col" style="background-color: black;">
-                        <div class="forecastWeatherData">
-                            <div class="forecast">
-                                <h2 class="forecastdate">(9/13/2022)</h2>
-                                <span class="weathericon">🔆</span>
-                            </div>
-                            <div class="forecastTemp">
-                                <p>Temp:</p>
-                                <p class="forecastTempVal"></p>
-                            </div>
-                            <div class="forecastWind">
-                                <p>Wind:</p>
-                                <p class="forecastWindVal"></p>
-                            </div>
-                            <div class="forecastHumidity">
-                                <p>Temp:</p>
-                                <p class="forecastHumidVal"></p>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="col" style="background-color: black;">
-                        <div class="forecastWeatherData">
-                            <div class="forecast">
-                                <h2 class="forecastdate">(9/13/2022)</h2>
-                                <span class="weathericon">🔆</span>
-                            </div>
-                            <div class="forecastTemp">
-                                <p>Temp:</p>
-                                <p class="forecastTempVal"></p>
-                            </div>
-                            <div class="forecastWind">
-                                <p>Wind:</p>
-                                <p class="forecastWindVal"></p>
-                            </div>
-                            <div class="forecastHumidity">
-                                <p>Temp:</p>
-                                <p class="forecastHumidVal"></p>
-                            </div>
-                        </div>
-
-                    </section>
-                </div>
-            </article> -->
         </div>
     </main>
     <script
